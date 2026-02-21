@@ -1,0 +1,96 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.API", "src\FinancialTracker.API\FinancialTracker.API.csproj", "{A1000001-0001-0001-0001-000000000001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.Auth.Domain", "src\FinancialTracker.Auth.Domain\FinancialTracker.Auth.Domain.csproj", "{A2000001-0002-0002-0002-000000000002}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.Auth.Application", "src\FinancialTracker.Auth.Application\FinancialTracker.Auth.Application.csproj", "{A2000002-0002-0002-0002-000000000003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.Auth.Infrastructure", "src\FinancialTracker.Auth.Infrastructure\FinancialTracker.Auth.Infrastructure.csproj", "{A2000003-0002-0002-0002-000000000004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.Auth.API", "src\FinancialTracker.Auth.API\FinancialTracker.Auth.API.csproj", "{A2000004-0002-0002-0002-000000000005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.Accounts.Domain", "src\FinancialTracker.Accounts.Domain\FinancialTracker.Accounts.Domain.csproj", "{A3000001-0003-0003-0003-000000000006}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.Accounts.Application", "src\FinancialTracker.Accounts.Application\FinancialTracker.Accounts.Application.csproj", "{A3000002-0003-0003-0003-000000000007}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.Accounts.Infrastructure", "src\FinancialTracker.Accounts.Infrastructure\FinancialTracker.Accounts.Infrastructure.csproj", "{A3000003-0003-0003-0003-000000000008}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.Accounts.API", "src\FinancialTracker.Accounts.API\FinancialTracker.Accounts.API.csproj", "{A3000004-0003-0003-0003-000000000009}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.Transactions.Domain", "src\FinancialTracker.Transactions.Domain\FinancialTracker.Transactions.Domain.csproj", "{A4000001-0004-0004-0004-00000000000A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.Transactions.Application", "src\FinancialTracker.Transactions.Application\FinancialTracker.Transactions.Application.csproj", "{A4000002-0004-0004-0004-00000000000B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.Transactions.Infrastructure", "src\FinancialTracker.Transactions.Infrastructure\FinancialTracker.Transactions.Infrastructure.csproj", "{A4000003-0004-0004-0004-00000000000C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.Transactions.API", "src\FinancialTracker.Transactions.API\FinancialTracker.Transactions.API.csproj", "{A4000004-0004-0004-0004-00000000000D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1000001-0001-0001-0001-000000000001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1000001-0001-0001-0001-000000000001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1000001-0001-0001-0001-000000000001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1000001-0001-0001-0001-000000000001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2000001-0002-0002-0002-000000000002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2000001-0002-0002-0002-000000000002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2000001-0002-0002-0002-000000000002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2000001-0002-0002-0002-000000000002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2000002-0002-0002-0002-000000000003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2000002-0002-0002-0002-000000000003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2000002-0002-0002-0002-000000000003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2000002-0002-0002-0002-000000000003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2000003-0002-0002-0002-000000000004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2000003-0002-0002-0002-000000000004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2000003-0002-0002-0002-000000000004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2000003-0002-0002-0002-000000000004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2000004-0002-0002-0002-000000000005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2000004-0002-0002-0002-000000000005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2000004-0002-0002-0002-000000000005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2000004-0002-0002-0002-000000000005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3000001-0003-0003-0003-000000000006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3000001-0003-0003-0003-000000000006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3000001-0003-0003-0003-000000000006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3000001-0003-0003-0003-000000000006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3000002-0003-0003-0003-000000000007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3000002-0003-0003-0003-000000000007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3000002-0003-0003-0003-000000000007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3000002-0003-0003-0003-000000000007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3000003-0003-0003-0003-000000000008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3000003-0003-0003-0003-000000000008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3000003-0003-0003-0003-000000000008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3000003-0003-0003-0003-000000000008}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3000004-0003-0003-0003-000000000009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3000004-0003-0003-0003-000000000009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3000004-0003-0003-0003-000000000009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3000004-0003-0003-0003-000000000009}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4000001-0004-0004-0004-00000000000A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4000001-0004-0004-0004-00000000000A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4000001-0004-0004-0004-00000000000A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4000001-0004-0004-0004-00000000000A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4000002-0004-0004-0004-00000000000B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4000002-0004-0004-0004-00000000000B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4000002-0004-0004-0004-00000000000B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4000002-0004-0004-0004-00000000000B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4000003-0004-0004-0004-00000000000C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4000003-0004-0004-0004-00000000000C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4000003-0004-0004-0004-00000000000C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4000003-0004-0004-0004-00000000000C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4000004-0004-0004-0004-00000000000D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4000004-0004-0004-0004-00000000000D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4000004-0004-0004-0004-00000000000D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4000004-0004-0004-0004-00000000000D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DF675ADE-01B0-4756-98B4-269B9D9E3CBE}
+	EndGlobalSection
+EndGlobal

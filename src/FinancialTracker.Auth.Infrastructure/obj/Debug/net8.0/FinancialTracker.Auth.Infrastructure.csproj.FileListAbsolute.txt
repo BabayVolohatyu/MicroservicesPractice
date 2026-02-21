@@ -1,0 +1,17 @@
+D:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\bin\Debug\net8.0\FinancialTracker.Auth.Infrastructure.deps.json
+d:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\bin\Debug\net8.0\FinancialTracker.Auth.Infrastructure.dll
+d:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\bin\Debug\net8.0\FinancialTracker.Auth.Infrastructure.pdb
+d:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\bin\Debug\net8.0\FinancialTracker.Auth.Application.dll
+d:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\bin\Debug\net8.0\FinancialTracker.Auth.Domain.dll
+d:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\bin\Debug\net8.0\FinancialTracker.Auth.Application.pdb
+d:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\bin\Debug\net8.0\FinancialTracker.Auth.Domain.pdb
+d:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\obj\Debug\net8.0\FinancialTracker.Auth.Infrastructure.csproj.AssemblyReference.cache
+d:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\obj\Debug\net8.0\FinancialTracker.Auth.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+d:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\obj\Debug\net8.0\FinancialTracker.Auth.Infrastructure.AssemblyInfoInputs.cache
+d:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\obj\Debug\net8.0\FinancialTracker.Auth.Infrastructure.AssemblyInfo.cs
+d:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\obj\Debug\net8.0\FinancialTracker.Auth.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\obj\Debug\net8.0\Financia.477D9435.Up2Date
+d:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\obj\Debug\net8.0\FinancialTracker.Auth.Infrastructure.dll
+d:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\obj\Debug\net8.0\refint\FinancialTracker.Auth.Infrastructure.dll
+d:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\obj\Debug\net8.0\FinancialTracker.Auth.Infrastructure.pdb
+D:\Finance tracker\src\FinancialTracker.Auth.Infrastructure\obj\Debug\net8.0\ref\FinancialTracker.Auth.Infrastructure.dll

@@ -1,0 +1,17 @@
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\bin\Debug\net8.0\FinancialTracker.Accounts.Infrastructure.deps.json
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\bin\Debug\net8.0\FinancialTracker.Accounts.Infrastructure.dll
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\bin\Debug\net8.0\FinancialTracker.Accounts.Infrastructure.pdb
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\bin\Debug\net8.0\FinancialTracker.Accounts.Application.dll
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\bin\Debug\net8.0\FinancialTracker.Accounts.Domain.dll
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\bin\Debug\net8.0\FinancialTracker.Accounts.Application.pdb
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\bin\Debug\net8.0\FinancialTracker.Accounts.Domain.pdb
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\obj\Debug\net8.0\FinancialTracker.Accounts.Infrastructure.csproj.AssemblyReference.cache
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\obj\Debug\net8.0\FinancialTracker.Accounts.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\obj\Debug\net8.0\FinancialTracker.Accounts.Infrastructure.AssemblyInfoInputs.cache
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\obj\Debug\net8.0\FinancialTracker.Accounts.Infrastructure.AssemblyInfo.cs
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\obj\Debug\net8.0\FinancialTracker.Accounts.Infrastructure.csproj.CoreCompileInputs.cache
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\obj\Debug\net8.0\Financia.74580791.Up2Date
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\obj\Debug\net8.0\FinancialTracker.Accounts.Infrastructure.dll
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\obj\Debug\net8.0\refint\FinancialTracker.Accounts.Infrastructure.dll
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\obj\Debug\net8.0\FinancialTracker.Accounts.Infrastructure.pdb
+d:\Finance tracker\src\FinancialTracker.Accounts.Infrastructure\obj\Debug\net8.0\ref\FinancialTracker.Accounts.Infrastructure.dll

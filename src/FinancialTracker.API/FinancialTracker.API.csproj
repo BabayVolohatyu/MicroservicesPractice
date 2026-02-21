@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>FinancialTracker.API</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FinancialTracker.Auth.API\FinancialTracker.Auth.API.csproj" />
+    <ProjectReference Include="..\FinancialTracker.Accounts.API\FinancialTracker.Accounts.API.csproj" />
+    <ProjectReference Include="..\FinancialTracker.Transactions.API\FinancialTracker.Transactions.API.csproj" />
+    <ProjectReference Include="..\FinancialTracker.Auth.Infrastructure\FinancialTracker.Auth.Infrastructure.csproj" />
+    <ProjectReference Include="..\FinancialTracker.Accounts.Infrastructure\FinancialTracker.Accounts.Infrastructure.csproj" />
+    <ProjectReference Include="..\FinancialTracker.Transactions.Infrastructure\FinancialTracker.Transactions.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+</Project>
