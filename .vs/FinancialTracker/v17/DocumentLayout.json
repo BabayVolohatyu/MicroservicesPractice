@@ -1,17 +1,53 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Finance tracker\\",
+  "WorkspaceRootPath": "D:\\Financial tracker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A1000001-0001-0001-0001-000000000001}|src\\FinancialTracker.API\\FinancialTracker.API.csproj|d:\\finance tracker\\src\\financialtracker.api\\financialtracker.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A1000001-0001-0001-0001-000000000001}|src\\FinancialTracker.API\\FinancialTracker.API.csproj|solutionrelative:src\\financialtracker.api\\financialtracker.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A1000001-0001-0001-0001-000000000001}|src\\FinancialTracker.API\\FinancialTracker.API.csproj|d:\\finance tracker\\src\\financialtracker.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{A1000001-0001-0001-0001-000000000001}|src\\FinancialTracker.API\\FinancialTracker.API.csproj|d:\\financial tracker\\src\\financialtracker.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A1000001-0001-0001-0001-000000000001}|src\\FinancialTracker.API\\FinancialTracker.API.csproj|solutionrelative:src\\financialtracker.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A1000001-0001-0001-0001-000000000001}|src\\FinancialTracker.API\\FinancialTracker.API.csproj|d:\\finance tracker\\src\\financialtracker.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{A1000001-0001-0001-0001-000000000001}|src\\FinancialTracker.API\\FinancialTracker.API.csproj|d:\\financial tracker\\src\\financialtracker.api\\financialtracker.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A1000001-0001-0001-0001-000000000001}|src\\FinancialTracker.API\\FinancialTracker.API.csproj|solutionrelative:src\\financialtracker.api\\financialtracker.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1000001-0001-0001-0001-000000000001}|src\\FinancialTracker.API\\FinancialTracker.API.csproj|d:\\financial tracker\\src\\financialtracker.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1000001-0001-0001-0001-000000000001}|src\\FinancialTracker.API\\FinancialTracker.API.csproj|solutionrelative:src\\financialtracker.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1000001-0001-0001-0001-000000000001}|src\\FinancialTracker.API\\FinancialTracker.API.csproj|d:\\financial tracker\\src\\financialtracker.api\\services\\databaseconnectionkeeper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1000001-0001-0001-0001-000000000001}|src\\FinancialTracker.API\\FinancialTracker.API.csproj|solutionrelative:src\\financialtracker.api\\services\\databaseconnectionkeeper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3000002-0003-0003-0003-000000000007}|src\\FinancialTracker.Accounts.Application\\FinancialTracker.Accounts.Application.csproj|d:\\financial tracker\\src\\financialtracker.accounts.application\\validators\\createaccountrequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3000002-0003-0003-0003-000000000007}|src\\FinancialTracker.Accounts.Application\\FinancialTracker.Accounts.Application.csproj|solutionrelative:src\\financialtracker.accounts.application\\validators\\createaccountrequestvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3000004-0003-0003-0003-000000000009}|src\\FinancialTracker.Accounts.API\\FinancialTracker.Accounts.API.csproj|d:\\financial tracker\\src\\financialtracker.accounts.api\\persistence\\accountsdbconnectionholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3000004-0003-0003-0003-000000000009}|src\\FinancialTracker.Accounts.API\\FinancialTracker.Accounts.API.csproj|solutionrelative:src\\financialtracker.accounts.api\\persistence\\accountsdbconnectionholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3000004-0003-0003-0003-000000000009}|src\\FinancialTracker.Accounts.API\\FinancialTracker.Accounts.API.csproj|d:\\financial tracker\\src\\financialtracker.accounts.api\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3000004-0003-0003-0003-000000000009}|src\\FinancialTracker.Accounts.API\\FinancialTracker.Accounts.API.csproj|solutionrelative:src\\financialtracker.accounts.api\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3000002-0003-0003-0003-000000000007}|src\\FinancialTracker.Accounts.Application\\FinancialTracker.Accounts.Application.csproj|d:\\financial tracker\\src\\financialtracker.accounts.application\\contracts\\subtractbalanceresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3000002-0003-0003-0003-000000000007}|src\\FinancialTracker.Accounts.Application\\FinancialTracker.Accounts.Application.csproj|solutionrelative:src\\financialtracker.accounts.application\\contracts\\subtractbalanceresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3000002-0003-0003-0003-000000000007}|src\\FinancialTracker.Accounts.Application\\FinancialTracker.Accounts.Application.csproj|d:\\financial tracker\\src\\financialtracker.accounts.application\\contracts\\iaccountbalanceupdater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3000002-0003-0003-0003-000000000007}|src\\FinancialTracker.Accounts.Application\\FinancialTracker.Accounts.Application.csproj|solutionrelative:src\\financialtracker.accounts.application\\contracts\\iaccountbalanceupdater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3000002-0003-0003-0003-000000000007}|src\\FinancialTracker.Accounts.Application\\FinancialTracker.Accounts.Application.csproj|d:\\financial tracker\\src\\financialtracker.accounts.application\\contracts\\ifinanceaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3000002-0003-0003-0003-000000000007}|src\\FinancialTracker.Accounts.Application\\FinancialTracker.Accounts.Application.csproj|solutionrelative:src\\financialtracker.accounts.application\\contracts\\ifinanceaccountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1000001-0001-0001-0001-000000000001}|src\\FinancialTracker.API\\FinancialTracker.API.csproj|d:\\financial tracker\\src\\financialtracker.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A1000001-0001-0001-0001-000000000001}|src\\FinancialTracker.API\\FinancialTracker.API.csproj|solutionrelative:src\\financialtracker.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1000001-0001-0001-0001-000000000001}|src\\FinancialTracker.API\\FinancialTracker.API.csproj|d:\\financial tracker\\src\\financialtracker.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A1000001-0001-0001-0001-000000000001}|src\\FinancialTracker.API\\FinancialTracker.API.csproj|solutionrelative:src\\financialtracker.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -22,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 508,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,11 +74,128 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FinancialTracker.API",
-              "DocumentMoniker": "D:\\Finance tracker\\src\\FinancialTracker.API\\FinancialTracker.API.csproj",
+              "DocumentIndex": 4,
+              "Title": "CreateAccountRequestValidator.cs",
+              "DocumentMoniker": "D:\\Financial tracker\\src\\FinancialTracker.Accounts.Application\\Validators\\CreateAccountRequestValidator.cs",
+              "RelativeDocumentMoniker": "src\\FinancialTracker.Accounts.Application\\Validators\\CreateAccountRequestValidator.cs",
+              "ToolTip": "D:\\Financial tracker\\src\\FinancialTracker.Accounts.Application\\Validators\\CreateAccountRequestValidator.cs",
+              "RelativeToolTip": "src\\FinancialTracker.Accounts.Application\\Validators\\CreateAccountRequestValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T11:21:57.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SubtractBalanceResult.cs",
+              "DocumentMoniker": "D:\\Financial tracker\\src\\FinancialTracker.Accounts.Application\\Contracts\\SubtractBalanceResult.cs",
+              "RelativeDocumentMoniker": "src\\FinancialTracker.Accounts.Application\\Contracts\\SubtractBalanceResult.cs",
+              "ToolTip": "D:\\Financial tracker\\src\\FinancialTracker.Accounts.Application\\Contracts\\SubtractBalanceResult.cs",
+              "RelativeToolTip": "src\\FinancialTracker.Accounts.Application\\Contracts\\SubtractBalanceResult.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T11:16:22.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IFinanceAccountRepository.cs",
+              "DocumentMoniker": "D:\\Financial tracker\\src\\FinancialTracker.Accounts.Application\\Contracts\\IFinanceAccountRepository.cs",
+              "RelativeDocumentMoniker": "src\\FinancialTracker.Accounts.Application\\Contracts\\IFinanceAccountRepository.cs",
+              "ToolTip": "D:\\Financial tracker\\src\\FinancialTracker.Accounts.Application\\Contracts\\IFinanceAccountRepository.cs",
+              "RelativeToolTip": "src\\FinancialTracker.Accounts.Application\\Contracts\\IFinanceAccountRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T11:16:17.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IAccountBalanceUpdater.cs",
+              "DocumentMoniker": "D:\\Financial tracker\\src\\FinancialTracker.Accounts.Application\\Contracts\\IAccountBalanceUpdater.cs",
+              "RelativeDocumentMoniker": "src\\FinancialTracker.Accounts.Application\\Contracts\\IAccountBalanceUpdater.cs",
+              "ToolTip": "D:\\Financial tracker\\src\\FinancialTracker.Accounts.Application\\Contracts\\IAccountBalanceUpdater.cs",
+              "RelativeToolTip": "src\\FinancialTracker.Accounts.Application\\Contracts\\IAccountBalanceUpdater.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T11:16:14.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AccountsDbConnectionHolder.cs",
+              "DocumentMoniker": "D:\\Financial tracker\\src\\FinancialTracker.Accounts.API\\Persistence\\AccountsDbConnectionHolder.cs",
+              "RelativeDocumentMoniker": "src\\FinancialTracker.Accounts.API\\Persistence\\AccountsDbConnectionHolder.cs",
+              "ToolTip": "D:\\Financial tracker\\src\\FinancialTracker.Accounts.API\\Persistence\\AccountsDbConnectionHolder.cs",
+              "RelativeToolTip": "src\\FinancialTracker.Accounts.API\\Persistence\\AccountsDbConnectionHolder.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T11:15:51.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AccountsController.cs",
+              "DocumentMoniker": "D:\\Financial tracker\\src\\FinancialTracker.Accounts.API\\Controllers\\AccountsController.cs",
+              "RelativeDocumentMoniker": "src\\FinancialTracker.Accounts.API\\Controllers\\AccountsController.cs",
+              "ToolTip": "D:\\Financial tracker\\src\\FinancialTracker.Accounts.API\\Controllers\\AccountsController.cs",
+              "RelativeToolTip": "src\\FinancialTracker.Accounts.API\\Controllers\\AccountsController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAgwDMAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T11:15:41.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DatabaseConnectionKeeper.cs",
+              "DocumentMoniker": "D:\\Financial tracker\\src\\FinancialTracker.API\\Services\\DatabaseConnectionKeeper.cs",
+              "RelativeDocumentMoniker": "src\\FinancialTracker.API\\Services\\DatabaseConnectionKeeper.cs",
+              "ToolTip": "D:\\Financial tracker\\src\\FinancialTracker.API\\Services\\DatabaseConnectionKeeper.cs",
+              "RelativeToolTip": "src\\FinancialTracker.API\\Services\\DatabaseConnectionKeeper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T11:14:59.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Financial tracker\\src\\FinancialTracker.API\\Program.cs",
+              "RelativeDocumentMoniker": "src\\FinancialTracker.API\\Program.cs",
+              "ToolTip": "D:\\Financial tracker\\src\\FinancialTracker.API\\Program.cs",
+              "RelativeToolTip": "src\\FinancialTracker.API\\Program.cs",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAAAKMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T11:13:31.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\Financial tracker\\src\\FinancialTracker.API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "src\\FinancialTracker.API\\appsettings.Development.json",
+              "ToolTip": "D:\\Financial tracker\\src\\FinancialTracker.API\\appsettings.Development.json",
+              "RelativeToolTip": "src\\FinancialTracker.API\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-23T11:13:23.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FinancialTracker.API.csproj",
+              "DocumentMoniker": "D:\\Financial tracker\\src\\FinancialTracker.API\\FinancialTracker.API.csproj",
               "RelativeDocumentMoniker": "src\\FinancialTracker.API\\FinancialTracker.API.csproj",
-              "ToolTip": "D:\\Finance tracker\\src\\FinancialTracker.API\\FinancialTracker.API.csproj",
+              "ToolTip": "D:\\Financial tracker\\src\\FinancialTracker.API\\FinancialTracker.API.csproj",
               "RelativeToolTip": "src\\FinancialTracker.API\\FinancialTracker.API.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -51,26 +204,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\Finance tracker\\src\\FinancialTracker.API\\Properties\\launchSettings.json",
+              "DocumentMoniker": "D:\\Financial tracker\\src\\FinancialTracker.API\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "src\\FinancialTracker.API\\Properties\\launchSettings.json",
-              "ToolTip": "D:\\Finance tracker\\src\\FinancialTracker.API\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Financial tracker\\src\\FinancialTracker.API\\Properties\\launchSettings.json",
               "RelativeToolTip": "src\\FinancialTracker.API\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-21T13:37:10.202Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-21T13:37:10.202Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Finance tracker\\src\\FinancialTracker.API\\appsettings.json",
+              "DocumentMoniker": "D:\\Financial tracker\\src\\FinancialTracker.API\\appsettings.json",
               "RelativeDocumentMoniker": "src\\FinancialTracker.API\\appsettings.json",
-              "ToolTip": "D:\\Finance tracker\\src\\FinancialTracker.API\\appsettings.json",
+              "ToolTip": "D:\\Financial tracker\\src\\FinancialTracker.API\\appsettings.json",
               "RelativeToolTip": "src\\FinancialTracker.API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-02-21T13:32:09.99Z",
               "EditorCaption": ""

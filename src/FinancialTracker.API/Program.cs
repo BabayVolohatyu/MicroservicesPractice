@@ -102,8 +102,7 @@ builder.Services.AddSwaggerGen(c =>
     c.OperationFilter<RequestExamplesOperationFilter>();
 });
 
-// JWT Configuration from environment variables (with fallback to appsettings.json)
-// Environment variables take precedence over config file values
+// JWT Configuration from environment variables 
 var jwtSecret = builder.Configuration["JWT_SECRET"] 
     ?? throw new InvalidOperationException("JWT_SECRET must be set in environment variables or appsettings.json");
 var jwtIssuer = builder.Configuration["JWT_ISSUER"] 
@@ -138,18 +137,13 @@ builder.Services.AddAuthModule(builder.Configuration);
 builder.Services.AddAccountsModule(builder.Configuration);
 builder.Services.AddTransactionsModule(builder.Configuration);
 
-// Note: DatabaseConnectionKeeper will be created after app.Build() to access scoped services
-
 var app = builder.Build();
 
-// Response logging (wraps pipeline to log status code and reason for every response)
 app.UseMiddleware<ResponseLoggingMiddleware>();
-// Exception handling middleware
 app.UseMiddleware<ValidationExceptionHandlerMiddleware>();
 app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
 
-// Initialize databases and keep connections open for in-memory SQLite
-// Create a scope that lives for the app lifetime
+
 var serviceScope = app.Services.CreateScope();
 var connectionKeeper = new DatabaseConnectionKeeper(
     serviceScope.ServiceProvider.GetRequiredService<AuthDbContext>(),
@@ -166,7 +160,7 @@ app.Lifetime.ApplicationStopped.Register(() =>
     serviceScope?.Dispose();
 });
 
-// Static files (e.g. for Swagger UI custom script)
+// Static files
 app.UseStaticFiles();
 
 // Enable Swagger in Development

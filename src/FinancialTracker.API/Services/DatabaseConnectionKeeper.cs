@@ -29,7 +29,6 @@ public sealed class DatabaseConnectionKeeper : IDisposable
         _accountsDb.Database.EnsureCreated();
         _transactionsDb.Database.EnsureCreated();
 
-        // Keep connections open for in-memory SQLite (store references to prevent GC)
         _authConnection = _authDb.Database.GetDbConnection();
         _accountsConnection = _accountsDb.Database.GetDbConnection();
         _transactionsConnection = _transactionsDb.Database.GetDbConnection();

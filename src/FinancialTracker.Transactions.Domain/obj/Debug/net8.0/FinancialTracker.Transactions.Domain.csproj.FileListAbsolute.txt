@@ -9,3 +9,15 @@ d:\Finance tracker\src\FinancialTracker.Transactions.Domain\obj\Debug\net8.0\Fin
 d:\Finance tracker\src\FinancialTracker.Transactions.Domain\obj\Debug\net8.0\refint\FinancialTracker.Transactions.Domain.dll
 d:\Finance tracker\src\FinancialTracker.Transactions.Domain\obj\Debug\net8.0\FinancialTracker.Transactions.Domain.pdb
 d:\Finance tracker\src\FinancialTracker.Transactions.Domain\obj\Debug\net8.0\ref\FinancialTracker.Transactions.Domain.dll
+D:\Financial tracker\src\FinancialTracker.Transactions.Domain\bin\Debug\net8.0\FinancialTracker.Transactions.Domain.deps.json
+D:\Financial tracker\src\FinancialTracker.Transactions.Domain\bin\Debug\net8.0\FinancialTracker.Transactions.Domain.dll
+D:\Financial tracker\src\FinancialTracker.Transactions.Domain\bin\Debug\net8.0\FinancialTracker.Transactions.Domain.pdb
+D:\Financial tracker\src\FinancialTracker.Transactions.Domain\obj\Debug\net8.0\FinancialTracker.Transactions.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Financial tracker\src\FinancialTracker.Transactions.Domain\obj\Debug\net8.0\FinancialTracker.Transactions.Domain.AssemblyInfoInputs.cache
+D:\Financial tracker\src\FinancialTracker.Transactions.Domain\obj\Debug\net8.0\FinancialTracker.Transactions.Domain.AssemblyInfo.cs
+D:\Financial tracker\src\FinancialTracker.Transactions.Domain\obj\Debug\net8.0\FinancialTracker.Transactions.Domain.csproj.CoreCompileInputs.cache
+D:\Financial tracker\src\FinancialTracker.Transactions.Domain\obj\Debug\net8.0\FinancialTracker.Transactions.Domain.sourcelink.json
+D:\Financial tracker\src\FinancialTracker.Transactions.Domain\obj\Debug\net8.0\FinancialTracker.Transactions.Domain.dll
+D:\Financial tracker\src\FinancialTracker.Transactions.Domain\obj\Debug\net8.0\refint\FinancialTracker.Transactions.Domain.dll
+D:\Financial tracker\src\FinancialTracker.Transactions.Domain\obj\Debug\net8.0\FinancialTracker.Transactions.Domain.pdb
+D:\Financial tracker\src\FinancialTracker.Transactions.Domain\obj\Debug\net8.0\ref\FinancialTracker.Transactions.Domain.dll
