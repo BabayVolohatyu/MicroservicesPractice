@@ -22,14 +22,10 @@ d:\Finance tracker\src\FinancialTracker.Transactions.Infrastructure\obj\Debug\ne
 D:\Financial tracker\src\FinancialTracker.Transactions.Infrastructure\bin\Debug\net8.0\FinancialTracker.Transactions.Infrastructure.deps.json
 D:\Financial tracker\src\FinancialTracker.Transactions.Infrastructure\bin\Debug\net8.0\FinancialTracker.Transactions.Infrastructure.dll
 D:\Financial tracker\src\FinancialTracker.Transactions.Infrastructure\bin\Debug\net8.0\FinancialTracker.Transactions.Infrastructure.pdb
-D:\Financial tracker\src\FinancialTracker.Transactions.Infrastructure\bin\Debug\net8.0\FinancialTracker.Accounts.Application.dll
-D:\Financial tracker\src\FinancialTracker.Transactions.Infrastructure\bin\Debug\net8.0\FinancialTracker.Accounts.Domain.dll
 D:\Financial tracker\src\FinancialTracker.Transactions.Infrastructure\bin\Debug\net8.0\FinancialTracker.Transactions.Application.dll
 D:\Financial tracker\src\FinancialTracker.Transactions.Infrastructure\bin\Debug\net8.0\FinancialTracker.Transactions.Domain.dll
 D:\Financial tracker\src\FinancialTracker.Transactions.Infrastructure\bin\Debug\net8.0\FinancialTracker.Transactions.Application.pdb
 D:\Financial tracker\src\FinancialTracker.Transactions.Infrastructure\bin\Debug\net8.0\FinancialTracker.Transactions.Domain.pdb
-D:\Financial tracker\src\FinancialTracker.Transactions.Infrastructure\bin\Debug\net8.0\FinancialTracker.Accounts.Application.pdb
-D:\Financial tracker\src\FinancialTracker.Transactions.Infrastructure\bin\Debug\net8.0\FinancialTracker.Accounts.Domain.pdb
 D:\Financial tracker\src\FinancialTracker.Transactions.Infrastructure\obj\Debug\net8.0\FinancialTracker.Transactions.Infrastructure.csproj.AssemblyReference.cache
 D:\Financial tracker\src\FinancialTracker.Transactions.Infrastructure\obj\Debug\net8.0\FinancialTracker.Transactions.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
 D:\Financial tracker\src\FinancialTracker.Transactions.Infrastructure\obj\Debug\net8.0\FinancialTracker.Transactions.Infrastructure.AssemblyInfoInputs.cache

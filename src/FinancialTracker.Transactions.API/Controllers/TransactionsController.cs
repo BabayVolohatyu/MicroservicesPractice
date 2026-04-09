@@ -1,7 +1,7 @@
 using System.Security.Claims;
-using FinancialTracker.Accounts.Application.Contracts;
 using FinancialTracker.Transactions.Application.DTOs.Request;
 using FinancialTracker.Transactions.Application.DTOs.Response;
+using FinancialTracker.Transactions.Application.Contracts;
 using FinancialTracker.Transactions.Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -58,6 +58,12 @@ public sealed class TransactionsController : ControllerBase
         var result = await _transactionsService.AddExpenseAsync(UserId, request, cancellationToken);
         if (!result.Success)
         {
+            if (result.FailureReason == SubtractBalanceFailureReason.ServiceUnavailable)
+            {
+                HttpContext.Items[ResponseReasonKey] = "Accounts service unavailable";
+                return StatusCode(StatusCodes.Status503ServiceUnavailable, new { message = "Accounts service temporarily unavailable" });
+            }
+
             if (result.FailureReason == SubtractBalanceFailureReason.InsufficientBalance)
             {
                 HttpContext.Items[ResponseReasonKey] = "Insufficient balance";

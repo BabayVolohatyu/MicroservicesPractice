@@ -20,12 +20,8 @@ d:\Finance tracker\src\FinancialTracker.Transactions.Application\obj\Debug\net8.
 D:\Financial tracker\src\FinancialTracker.Transactions.Application\bin\Debug\net8.0\FinancialTracker.Transactions.Application.deps.json
 D:\Financial tracker\src\FinancialTracker.Transactions.Application\bin\Debug\net8.0\FinancialTracker.Transactions.Application.dll
 D:\Financial tracker\src\FinancialTracker.Transactions.Application\bin\Debug\net8.0\FinancialTracker.Transactions.Application.pdb
-D:\Financial tracker\src\FinancialTracker.Transactions.Application\bin\Debug\net8.0\FinancialTracker.Accounts.Application.dll
-D:\Financial tracker\src\FinancialTracker.Transactions.Application\bin\Debug\net8.0\FinancialTracker.Accounts.Domain.dll
 D:\Financial tracker\src\FinancialTracker.Transactions.Application\bin\Debug\net8.0\FinancialTracker.Transactions.Domain.dll
-D:\Financial tracker\src\FinancialTracker.Transactions.Application\bin\Debug\net8.0\FinancialTracker.Accounts.Application.pdb
 D:\Financial tracker\src\FinancialTracker.Transactions.Application\bin\Debug\net8.0\FinancialTracker.Transactions.Domain.pdb
-D:\Financial tracker\src\FinancialTracker.Transactions.Application\bin\Debug\net8.0\FinancialTracker.Accounts.Domain.pdb
 D:\Financial tracker\src\FinancialTracker.Transactions.Application\obj\Debug\net8.0\FinancialTracker.Transactions.Application.csproj.AssemblyReference.cache
 D:\Financial tracker\src\FinancialTracker.Transactions.Application\obj\Debug\net8.0\FinancialTracker.Transactions.Application.GeneratedMSBuildEditorConfig.editorconfig
 D:\Financial tracker\src\FinancialTracker.Transactions.Application\obj\Debug\net8.0\FinancialTracker.Transactions.Application.AssemblyInfoInputs.cache

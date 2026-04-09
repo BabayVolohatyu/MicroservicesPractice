@@ -1,0 +1,18 @@
+{
+  "profiles": {
+    "FinancialTracker.Auth.API": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5001",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "JWT_SECRET": "YourSuperSecretKeyForJwtTokensMustBeAtLeast32CharactersLong!",
+        "JWT_ISSUER": "FinancialTracker",
+        "JWT_AUDIENCE": "FinancialTracker",
+        "JWT_EXPIRATION_HOURS": "24",
+        "AUTH_DB_CONNECTION_STRING": "Data Source=AuthDb;Mode=Memory;Cache=Shared"
+      }
+    }
+  }
+}

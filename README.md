@@ -1,3 +1,184 @@
+# Financial Tracker - Lab 3 Microservices
+
+Проєкт переведено на 3 окремі сервіси:
+
+- `src/FinancialTracker.Auth.API`
+- `src/FinancialTracker.Accounts.API`
+- `src/FinancialTracker.Transactions.API`
+
+`FinancialTracker.API` (старий композиційний host) повністю прибраний.
+
+## Що реалізовано по ЛР №3
+
+- декомпозиція на 3 сервіси;
+- `Database per Service` (окремі `Auth/Accounts/Transactions` DB connection strings);
+- синхронний REST виклик `Transactions -> Accounts`;
+- resilience для міжсервісного клієнта: timeout + retry + circuit breaker;
+- передача `X-Correlation-ID` між сервісами;
+- контрольована відповідь `503`, якщо `Accounts` тимчасово недоступний.
+
+## Потрібні змінні середовища
+
+```powershell
+$env:JWT_SECRET="YourSuperSecretKeyForJwtTokensMustBeAtLeast32CharactersLong!"
+$env:JWT_ISSUER="FinancialTracker"
+$env:JWT_AUDIENCE="FinancialTracker"
+$env:JWT_EXPIRATION_HOURS="24"
+
+$env:AUTH_DB_CONNECTION_STRING="Data Source=AuthDb;Mode=Memory;Cache=Shared"
+$env:ACCOUNTS_DB_CONNECTION_STRING="Data Source=AccountsDb;Mode=Memory;Cache=Shared"
+$env:TRANSACTIONS_DB_CONNECTION_STRING="Data Source=TransactionsDb;Mode=Memory;Cache=Shared"
+
+$env:AccountsService__BaseUrl="http://localhost:5002"
+```
+
+## Запуск (3 окремі термінали)
+
+```powershell
+dotnet run --project src/FinancialTracker.Auth.API/FinancialTracker.Auth.API.csproj
+dotnet run --project src/FinancialTracker.Accounts.API/FinancialTracker.Accounts.API.csproj
+dotnet run --project src/FinancialTracker.Transactions.API/FinancialTracker.Transactions.API.csproj
+```
+
+Swagger:
+
+- Auth: `http://localhost:5001/swagger`
+- Accounts: `http://localhost:5002/swagger`
+- Transactions: `http://localhost:5003/swagger`
+
+## Демонстрація відмовостійкості
+
+1. Запустити всі 3 сервіси.
+2. Отримати JWT через Auth.
+3. Створити рахунок в Accounts.
+4. Виконати income/expense у Transactions (happy path).
+5. Зупинити Accounts.
+6. Повторити виклик у Transactions.
+7. Очікувано:
+   - retries/timeouts у логах Transactions;
+   - спрацювання circuit breaker;
+   - відповідь `503 Accounts service temporarily unavailable`;
+   - `X-Correlation-ID` у заголовках і логах.
+
+## Перевірка збірки
+
+```powershell
+dotnet build FinancialTracker.sln
+```
+# Financial Tracker - Lab 3 (Microservices)
+
+This repository is now configured for **Lab #3** requirements:
+- decomposition into independent services;
+- synchronous REST interaction between services;
+- resilience patterns (timeout, retry, circuit breaker);
+- correlation ID propagation for distributed tracing;
+- failure scenario demonstration.
+
+## Services
+
+- `FinancialTracker.Auth.API` - registration/login and JWT issuing.
+- `FinancialTracker.Accounts.API` - accounts and balances.
+- `FinancialTracker.Transactions.API` - income/expense operations.
+
+Each service has its own DbContext and its own connection string:
+- `AUTH_DB_CONNECTION_STRING`
+- `ACCOUNTS_DB_CONNECTION_STRING`
+- `TRANSACTIONS_DB_CONNECTION_STRING`
+
+## Important architecture change
+
+The old host-style composition project `FinancialTracker.API` was removed from the solution startup path.
+`Transactions` no longer calls `Accounts` in-process via DI contracts; now it calls `Accounts` over HTTP:
+
+- `POST /api/v1/internal/accounts/{accountId}/credit`
+- `POST /api/v1/internal/accounts/{accountId}/debit`
+
+## Resilience in Transactions -> Accounts call
+
+`Transactions` uses typed `HttpClient` with:
+- timeout;
+- retry with backoff;
+- circuit breaker.
+
+Config section (in `src/FinancialTracker.Transactions.API/appsettings.json`):
+
+```json
+"AccountsService": {
+  "BaseUrl": "http://localhost:5002",
+  "TimeoutSeconds": 2,
+  "RetryCount": 3,
+  "RetryBaseDelayMs": 250,
+  "CircuitBreakerFailureThreshold": 3,
+  "CircuitBreakerBreakSeconds": 20
+}
+```
+
+You can override by env var:
+- `AccountsService__BaseUrl=http://localhost:5002`
+
+## Correlation ID tracing
+
+All three services use `X-Correlation-ID` middleware:
+- reads incoming header or generates new ID;
+- returns it in response header;
+- adds correlation scope for logs.
+
+During `Transactions -> Accounts` REST call, `X-Correlation-ID` is forwarded automatically.
+
+## Prerequisites
+
+- .NET 8 SDK
+
+## Environment variables
+
+Use values from `.env.example`:
+
+```powershell
+$env:JWT_SECRET="YourSuperSecretKeyForJwtTokensMustBeAtLeast32CharactersLong!"
+$env:JWT_ISSUER="FinancialTracker"
+$env:JWT_AUDIENCE="FinancialTracker"
+$env:JWT_EXPIRATION_HOURS="24"
+$env:AUTH_DB_CONNECTION_STRING="Data Source=AuthDb;Mode=Memory;Cache=Shared"
+$env:ACCOUNTS_DB_CONNECTION_STRING="Data Source=AccountsDb;Mode=Memory;Cache=Shared"
+$env:TRANSACTIONS_DB_CONNECTION_STRING="Data Source=TransactionsDb;Mode=Memory;Cache=Shared"
+$env:AccountsService__BaseUrl="http://localhost:5002"
+```
+
+## Run services (3 terminals)
+
+From repository root:
+
+```powershell
+dotnet run --project src/FinancialTracker.Auth.API/FinancialTracker.Auth.API.csproj
+dotnet run --project src/FinancialTracker.Accounts.API/FinancialTracker.Accounts.API.csproj
+dotnet run --project src/FinancialTracker.Transactions.API/FinancialTracker.Transactions.API.csproj
+```
+
+Default URLs:
+- Auth: `http://localhost:5001/swagger`
+- Accounts: `http://localhost:5002/swagger`
+- Transactions: `http://localhost:5003/swagger`
+
+## Reliability test scenario (Lab requirement)
+
+1. Start all three services.
+2. Register/login via Auth and get JWT.
+3. Create an account in Accounts.
+4. Execute income/expense from Transactions (happy path).
+5. Stop Accounts service.
+6. Call Transactions expense/income endpoint again.
+7. Observe behavior:
+   - retries/timeouts in Transactions logs;
+   - circuit breaker eventually opens;
+   - Transactions returns controlled error (`503 Accounts service temporarily unavailable`);
+   - same `X-Correlation-ID` appears in request chain logs while Accounts is reachable.
+
+## Build
+
+```powershell
+dotnet build FinancialTracker.sln
+```
+
 # Financial Tracker — Modular Monolith
 
 A financial tracker built as a **modular monolith** with clear bounded contexts, layered architecture, and readiness to split into microservices.
@@ -53,6 +234,9 @@ JWT_SECRET=YourSuperSecretKeyForJwtTokensMustBeAtLeast32CharactersLong!
 JWT_ISSUER=FinancialTracker
 JWT_AUDIENCE=FinancialTracker
 JWT_EXPIRATION_HOURS=24
+AUTH_DB_CONNECTION_STRING=Data Source=AuthDb;Mode=Memory;Cache=Shared
+ACCOUNTS_DB_CONNECTION_STRING=Data Source=AccountsDb;Mode=Memory;Cache=Shared
+TRANSACTIONS_DB_CONNECTION_STRING=Data Source=TransactionsDb;Mode=Memory;Cache=Shared
 ```
 
 ### Optional Environment Variables
@@ -68,6 +252,9 @@ $env:JWT_SECRET="YourSuperSecretKeyForJwtTokensMustBeAtLeast32CharactersLong!"
 $env:JWT_ISSUER="FinancialTracker"
 $env:JWT_AUDIENCE="FinancialTracker"
 $env:JWT_EXPIRATION_HOURS="24"
+$env:AUTH_DB_CONNECTION_STRING="Data Source=AuthDb;Mode=Memory;Cache=Shared"
+$env:ACCOUNTS_DB_CONNECTION_STRING="Data Source=AccountsDb;Mode=Memory;Cache=Shared"
+$env:TRANSACTIONS_DB_CONNECTION_STRING="Data Source=TransactionsDb;Mode=Memory;Cache=Shared"
 ```
 
 **Linux/Mac:**
@@ -76,6 +263,9 @@ export JWT_SECRET="YourSuperSecretKeyForJwtTokensMustBeAtLeast32CharactersLong!"
 export JWT_ISSUER="FinancialTracker"
 export JWT_AUDIENCE="FinancialTracker"
 export JWT_EXPIRATION_HOURS="24"
+export AUTH_DB_CONNECTION_STRING="Data Source=AuthDb;Mode=Memory;Cache=Shared"
+export ACCOUNTS_DB_CONNECTION_STRING="Data Source=AccountsDb;Mode=Memory;Cache=Shared"
+export TRANSACTIONS_DB_CONNECTION_STRING="Data Source=TransactionsDb;Mode=Memory;Cache=Shared"
 ```
 
 See `.env.example` for reference.
@@ -85,11 +275,11 @@ See `.env.example` for reference.
 ## Run
 
 ```bash
-cd "d:\Finance tracker"
+cd "d:\Financial tracker"
 dotnet run --project src/FinancialTracker.API/FinancialTracker.API.csproj
 ```
 
-Open https://localhost:7001 (Swagger UI) or https://localhost:7001/swagger/v1/swagger.json (OpenAPI JSON).
+Open https://localhost:7001/swagger (Swagger UI) or https://localhost:7001/swagger/v1/swagger.json (OpenAPI JSON).
 
 ## API Features
 
@@ -133,7 +323,7 @@ All errors return a unified format:
 All `IHealthCheck` implementations in the API assembly are **registered automatically**. To add a new check: create a class implementing `IHealthCheck` in the `HealthChecks` folder (optionally with `[HealthCheckRegistration(Name = "...", Tags = new[] { "ready" })]`). No changes to `Program.cs` are required.
 
 ### 5. **Swagger Documentation**
-- Interactive API documentation at root (`/`)
+- Interactive API documentation at `/swagger`
 - JWT authentication support — click "Authorize" and enter `Bearer {token}`
 - All endpoints documented with request/response schemas
 

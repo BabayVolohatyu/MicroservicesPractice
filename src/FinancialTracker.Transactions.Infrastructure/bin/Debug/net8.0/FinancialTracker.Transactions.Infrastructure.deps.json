@@ -331,29 +331,8 @@
           }
         }
       },
-      "FinancialTracker.Accounts.Application/1.0.0": {
-        "dependencies": {
-          "FinancialTracker.Accounts.Domain": "1.0.0",
-          "FluentValidation": "11.11.0"
-        },
-        "runtime": {
-          "FinancialTracker.Accounts.Application.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "FinancialTracker.Accounts.Domain/1.0.0": {
-        "runtime": {
-          "FinancialTracker.Accounts.Domain.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "FinancialTracker.Transactions.Application/1.0.0": {
         "dependencies": {
-          "FinancialTracker.Accounts.Application": "1.0.0",
           "FinancialTracker.Transactions.Domain": "1.0.0",
           "FluentValidation": "11.11.0"
         },
@@ -526,16 +505,6 @@
       "sha512": "sha512-PQ2Oq3yepLY4P7ll145P3xtx2bX8xF4PzaKPRpw9jZlKvfe4LE/saAV82inND9usn1XRpmxXk7Lal3MTI+6CNg==",
       "path": "sqlitepclraw.provider.e_sqlite3/2.1.6",
       "hashPath": "sqlitepclraw.provider.e_sqlite3.2.1.6.nupkg.sha512"
-    },
-    "FinancialTracker.Accounts.Application/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "FinancialTracker.Accounts.Domain/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "FinancialTracker.Transactions.Application/1.0.0": {
       "type": "project",

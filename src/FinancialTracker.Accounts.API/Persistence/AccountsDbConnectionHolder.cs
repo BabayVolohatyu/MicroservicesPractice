@@ -1,4 +1,5 @@
 using Microsoft.Data.Sqlite;
+using Microsoft.Extensions.Configuration;
 
 namespace FinancialTracker.Accounts.API.Persistence;
 
@@ -9,7 +10,14 @@ namespace FinancialTracker.Accounts.API.Persistence;
 public sealed class AccountsDbConnectionHolder : IDisposable
 {
     private readonly object _lock = new();
+    private readonly string _connectionString;
     private SqliteConnection? _connection;
+
+    public AccountsDbConnectionHolder(IConfiguration configuration)
+    {
+        _connectionString = configuration["ACCOUNTS_DB_CONNECTION_STRING"]
+            ?? throw new InvalidOperationException("ACCOUNTS_DB_CONNECTION_STRING must be set in environment variables");
+    }
 
     public SqliteConnection Connection
     {
@@ -21,7 +29,7 @@ public sealed class AccountsDbConnectionHolder : IDisposable
             {
                 if (_connection != null)
                     return _connection;
-                _connection = new SqliteConnection("Data Source=AccountsDb;Mode=Memory;Cache=Shared");
+                _connection = new SqliteConnection(_connectionString);
                 _connection.Open();
                 return _connection;
             }

@@ -5,7 +5,7 @@ using FinancialTracker.Accounts.Domain;
 
 namespace FinancialTracker.Accounts.Application.Services;
 
-public sealed class AccountsApplicationService : IAccountBalanceUpdater
+public sealed class AccountsApplicationService
 {
     private readonly IFinanceAccountRepository _accountRepository;
 

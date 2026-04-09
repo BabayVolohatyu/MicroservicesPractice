@@ -2,8 +2,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36511.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.API", "src\FinancialTracker.API\FinancialTracker.API.csproj", "{A1000001-0001-0001-0001-000000000001}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.Auth.Domain", "src\FinancialTracker.Auth.Domain\FinancialTracker.Auth.Domain.csproj", "{A2000001-0002-0002-0002-000000000002}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.Auth.Application", "src\FinancialTracker.Auth.Application\FinancialTracker.Auth.Application.csproj", "{A2000002-0002-0002-0002-000000000003}"
@@ -34,10 +32,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A1000001-0001-0001-0001-000000000001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A1000001-0001-0001-0001-000000000001}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A1000001-0001-0001-0001-000000000001}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A1000001-0001-0001-0001-000000000001}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A2000001-0002-0002-0002-000000000002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A2000001-0002-0002-0002-000000000002}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2000001-0002-0002-0002-000000000002}.Release|Any CPU.ActiveCfg = Release|Any CPU

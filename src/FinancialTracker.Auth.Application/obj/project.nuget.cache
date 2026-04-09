@@ -1,42 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "nEldAXX0Xq8=",
-  "success": false,
+  "dgSpecHash": "YddMt87kGjg=",
+  "success": true,
   "projectFilePath": "D:\\Financial tracker\\src\\FinancialTracker.Auth.Application\\FinancialTracker.Auth.Application.csproj",
-  "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "NU1301",
-      "level": "Error",
-      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.\r\n  An error occurred while sending the request.\r\n  The remote name could not be resolved: 'api.nuget.org'",
-      "projectPath": "D:\\Financial tracker\\src\\FinancialTracker.Auth.Application\\FinancialTracker.Auth.Application.csproj",
-      "filePath": "D:\\Financial tracker\\src\\FinancialTracker.Auth.Application\\FinancialTracker.Auth.Application.csproj",
-      "targetGraphs": []
-    },
-    {
-      "code": "NU1301",
-      "level": "Error",
-      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.\r\n  An error occurred while sending the request.\r\n  The remote name could not be resolved: 'api.nuget.org'",
-      "projectPath": "D:\\Financial tracker\\src\\FinancialTracker.Auth.Application\\FinancialTracker.Auth.Application.csproj",
-      "filePath": "D:\\Financial tracker\\src\\FinancialTracker.Auth.Application\\FinancialTracker.Auth.Application.csproj",
-      "targetGraphs": []
-    },
-    {
-      "code": "NU1301",
-      "level": "Error",
-      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.\r\n  An error occurred while sending the request.\r\n  The remote name could not be resolved: 'api.nuget.org'",
-      "projectPath": "D:\\Financial tracker\\src\\FinancialTracker.Auth.Application\\FinancialTracker.Auth.Application.csproj",
-      "filePath": "D:\\Financial tracker\\src\\FinancialTracker.Auth.Application\\FinancialTracker.Auth.Application.csproj",
-      "targetGraphs": []
-    },
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
-      "projectPath": "D:\\Financial tracker\\src\\FinancialTracker.Auth.Application\\FinancialTracker.Auth.Application.csproj",
-      "warningLevel": 1,
-      "filePath": "D:\\Financial tracker\\src\\FinancialTracker.Auth.Application\\FinancialTracker.Auth.Application.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "expectedPackageFiles": [
+    "C:\\Users\\babay\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
+    "C:\\Users\\babay\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\babay\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512"
+  ],
+  "logs": []
 }

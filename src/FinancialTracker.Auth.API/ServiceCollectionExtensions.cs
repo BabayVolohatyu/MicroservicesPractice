@@ -20,12 +20,12 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddSingleton<IPasswordHasher, BcryptPasswordHasher>();
         
-        // JWT Options from environment variables (with fallback to appsettings.json)
+        // JWT options from environment variables
         var jwtOptions = new JwtOptions
         {
-            Secret = configuration["JWT_SECRET"] ?? throw new InvalidOperationException("JWT_SECRET must be set in environment variables or appsettings.json"),
-            Issuer = configuration["JWT_ISSUER"] ?? throw new InvalidOperationException("JWT_ISSUER must be set in environment variables or appsettings.json"),
-            Audience = configuration["JWT_AUDIENCE"] ?? throw new InvalidOperationException("JWT_AUDIENCE must be set in environment variables or appsettings.json"),
+            Secret = configuration["JWT_SECRET"] ?? throw new InvalidOperationException("JWT_SECRET must be set in environment variables"),
+            Issuer = configuration["JWT_ISSUER"] ?? throw new InvalidOperationException("JWT_ISSUER must be set in environment variables"),
+            Audience = configuration["JWT_AUDIENCE"] ?? throw new InvalidOperationException("JWT_AUDIENCE must be set in environment variables"),
             ExpirationHours = int.TryParse(configuration["JWT_EXPIRATION_HOURS"], out var hours) ? hours : 24
         };
         services.AddSingleton(Microsoft.Extensions.Options.Options.Create(jwtOptions));

@@ -1,4 +1,5 @@
 using Microsoft.Data.Sqlite;
+using Microsoft.Extensions.Configuration;
 
 namespace FinancialTracker.Auth.API.Persistence;
 
@@ -9,7 +10,14 @@ namespace FinancialTracker.Auth.API.Persistence;
 public sealed class AuthDbConnectionHolder : IDisposable
 {
     private readonly object _lock = new();
+    private readonly string _connectionString;
     private SqliteConnection? _connection;
+
+    public AuthDbConnectionHolder(IConfiguration configuration)
+    {
+        _connectionString = configuration["AUTH_DB_CONNECTION_STRING"]
+            ?? throw new InvalidOperationException("AUTH_DB_CONNECTION_STRING must be set in environment variables");
+    }
 
     public SqliteConnection Connection
     {
@@ -21,7 +29,7 @@ public sealed class AuthDbConnectionHolder : IDisposable
             {
                 if (_connection != null)
                     return _connection;
-                _connection = new SqliteConnection("Data Source=AuthDb;Mode=Memory;Cache=Shared");
+                _connection = new SqliteConnection(_connectionString);
                 _connection.Open();
                 return _connection;
             }

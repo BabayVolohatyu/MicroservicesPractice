@@ -1,4 +1,4 @@
-using FinancialTracker.Accounts.Application.Contracts;
+using FinancialTracker.Transactions.Application.Contracts;
 
 namespace FinancialTracker.Transactions.Application.DTOs.Response;
 
