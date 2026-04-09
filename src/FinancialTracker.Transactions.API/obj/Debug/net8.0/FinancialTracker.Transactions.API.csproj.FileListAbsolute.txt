@@ -113,3 +113,4 @@ D:\Financial tracker\src\FinancialTracker.Transactions.API\obj\Debug\net8.0\stat
 D:\Financial tracker\src\FinancialTracker.Transactions.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 D:\Financial tracker\src\FinancialTracker.Transactions.API\obj\Debug\net8.0\swae.build.ex.cache
 D:\Financial tracker\src\FinancialTracker.Transactions.API\obj\Debug\net8.0\FinancialTracker.Transactions.API.genruntimeconfig.cache
+D:\Financial tracker\src\FinancialTracker.Transactions.API\bin\Debug\net8.0\FinancialTracker.Transactions.API.staticwebassets.runtime.json

@@ -2,6 +2,7 @@ using System.Text;
 using FinancialTracker.Accounts.API;
 using FinancialTracker.Accounts.API.Middleware;
 using FinancialTracker.Accounts.API.Persistence;
+using FinancialTracker.Accounts.API.Swagger;
 using FinancialTracker.Accounts.Infrastructure.Persistence;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -53,6 +54,7 @@ builder.Services.AddSwaggerGen(c =>
             Array.Empty<string>()
         }
     });
+    c.OperationFilter<RequestExamplesOperationFilter>();
 });
 
 var jwtSecret = builder.Configuration["JWT_SECRET"] ?? throw new InvalidOperationException("JWT_SECRET must be set in environment variables");
@@ -95,11 +97,15 @@ app.Lifetime.ApplicationStopping.Register(() =>
 });
 
 app.UseMiddleware<CorrelationIdMiddleware>();
+app.UseStaticFiles();
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.InjectJavascript("/swagger-copy-to-clipboard.js");
+    });
 }
 
 app.UseAuthentication();

@@ -1,6 +1,7 @@
 using FinancialTracker.Auth.API;
 using FinancialTracker.Auth.API.Middleware;
 using FinancialTracker.Auth.API.Persistence;
+using FinancialTracker.Auth.API.Swagger;
 using FinancialTracker.Auth.Infrastructure.Persistence;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
@@ -29,6 +30,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Auth API", Version = "v1" });
+    c.OperationFilter<RequestExamplesOperationFilter>();
 });
 
 builder.Services.AddAuthModule(builder.Configuration);
@@ -48,11 +50,15 @@ app.Lifetime.ApplicationStopping.Register(() =>
 });
 
 app.UseMiddleware<CorrelationIdMiddleware>();
+app.UseStaticFiles();
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.InjectJavascript("/swagger-copy-to-clipboard.js");
+    });
 }
 
 app.MapControllers();

@@ -25,14 +25,14 @@ public sealed class AccountsBalanceGatewayHttpClient : IAccountBalanceGateway
     public async Task<bool> AddBalanceAsync(Guid accountId, Guid userId, decimal amount, CancellationToken cancellationToken = default)
     {
         var request = new UpdateBalanceRequest(userId, amount);
-        using var response = await SendAsync(HttpMethod.Post, $"api/v1/internal/accounts/{accountId:guid}/credit", request, cancellationToken);
+        using var response = await SendAsync(HttpMethod.Post, $"api/v1/internal/accounts/{accountId:D}/credit", request, cancellationToken);
         return response.StatusCode == HttpStatusCode.OK;
     }
 
     public async Task<SubtractBalanceResult> SubtractBalanceAsync(Guid accountId, Guid userId, decimal amount, CancellationToken cancellationToken = default)
     {
         var request = new UpdateBalanceRequest(userId, amount);
-        using var response = await SendAsync(HttpMethod.Post, $"api/v1/internal/accounts/{accountId:guid}/debit", request, cancellationToken);
+        using var response = await SendAsync(HttpMethod.Post, $"api/v1/internal/accounts/{accountId:D}/debit", request, cancellationToken);
 
         if (response.StatusCode == HttpStatusCode.OK)
         {
