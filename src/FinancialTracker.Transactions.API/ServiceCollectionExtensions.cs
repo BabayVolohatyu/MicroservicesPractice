@@ -1,4 +1,6 @@
+using Confluent.Kafka;
 using FinancialTracker.Transactions.API.Clients;
+using FinancialTracker.Transactions.API.Outbox;
 using FinancialTracker.Transactions.API.Persistence;
 using FinancialTracker.Transactions.Application.Contracts;
 using FinancialTracker.Transactions.Application.Services;
@@ -23,7 +25,7 @@ public static class ServiceCollectionExtensions
 
         services.AddScoped<TransactionsApplicationService>();
         services.AddScoped<ITransactionRepository, TransactionRepository>();
-        services.AddHttpClient<IAccountBalanceGateway, AccountsBalanceGatewayHttpClient>(client =>
+        services.AddHttpClient<IAccountsReadClient, AccountsApiReadClient>(client =>
         {
             client.BaseAddress = new Uri(accountsOptions.BaseUrl);
             client.Timeout = TimeSpan.FromSeconds(accountsOptions.TimeoutSeconds);
@@ -49,6 +51,22 @@ public static class ServiceCollectionExtensions
             var holder = sp.GetRequiredService<TransactionsDbConnectionHolder>();
             ob.UseSqlite(holder.Connection);
         });
+
+        // Kafka producer (singleton — thread-safe, meant to be reused)
+        var kafkaBootstrap = configuration["Kafka:BootstrapServers"] ?? "localhost:9092";
+        services.AddSingleton<IProducer<string, string>>(sp =>
+        {
+            var config = new ProducerConfig
+            {
+                BootstrapServers = kafkaBootstrap,
+                Acks = Acks.All,
+                EnableIdempotence = true
+            };
+            return new ProducerBuilder<string, string>(config).Build();
+        });
+
+        // Outbox relay background service
+        services.AddHostedService<OutboxRelayService>();
 
         return services;
     }

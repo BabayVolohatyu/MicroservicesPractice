@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "25bfXow+xAc=",
+  "dgSpecHash": "N8PLsautslw=",
   "success": true,
   "projectFilePath": "D:\\Financial tracker\\src\\FinancialTracker.Transactions.API\\FinancialTracker.Transactions.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\babay\\.nuget\\packages\\confluent.kafka\\2.14.0\\confluent.kafka.2.14.0.nupkg.sha512",
     "C:\\Users\\babay\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\babay\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\babay\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
+    "C:\\Users\\babay\\.nuget\\packages\\librdkafka.redist\\2.14.0\\librdkafka.redist.2.14.0.nupkg.sha512",
     "C:\\Users\\babay\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.8\\microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512",
     "C:\\Users\\babay\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.1.0\\microsoft.aspnetcore.mvc.versioning.5.1.0.nupkg.sha512",
     "C:\\Users\\babay\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.1.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.1.0.nupkg.sha512",

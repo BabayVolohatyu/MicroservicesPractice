@@ -33,16 +33,24 @@ public sealed class TransactionsController : ControllerBase
     [ProducesResponseType(typeof(TransactionResponse), 201)]
     [ProducesResponseType(400)]
     [ProducesResponseType(404)]
+    [ProducesResponseType(503)]
     public async Task<IActionResult> AddIncome([FromBody] AddIncomeRequest request, CancellationToken cancellationToken)
     {
         var result = await _transactionsService.AddIncomeAsync(UserId, request, cancellationToken);
-        if (result == null)
+        if (!result.Success)
         {
+            if (result.FailureReason == SubtractBalanceFailureReason.ServiceUnavailable)
+            {
+                HttpContext.Items[ResponseReasonKey] = "Accounts service unavailable";
+                return StatusCode(StatusCodes.Status503ServiceUnavailable, new { message = "Accounts service temporarily unavailable" });
+            }
+
             HttpContext.Items[ResponseReasonKey] = "Account not found or access denied";
             return NotFound(new { message = "Account not found or access denied" });
         }
+
         HttpContext.Items[ResponseReasonKey] = "Income added successfully";
-        return CreatedAtAction(nameof(AddIncome), result);
+        return CreatedAtAction(nameof(AddIncome), result.Data);
     }
 
     /// <summary>
@@ -53,6 +61,7 @@ public sealed class TransactionsController : ControllerBase
     [ProducesResponseType(400)]
     [ProducesResponseType(404)]
     [ProducesResponseType(422)]
+    [ProducesResponseType(503)]
     public async Task<IActionResult> AddExpense([FromBody] AddExpenseRequest request, CancellationToken cancellationToken)
     {
         var result = await _transactionsService.AddExpenseAsync(UserId, request, cancellationToken);

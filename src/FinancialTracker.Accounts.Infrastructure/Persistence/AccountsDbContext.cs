@@ -8,6 +8,7 @@ public sealed class AccountsDbContext : DbContext
     public AccountsDbContext(DbContextOptions<AccountsDbContext> options) : base(options) { }
 
     public DbSet<FinanceAccount> FinanceAccounts => Set<FinanceAccount>();
+    public DbSet<ProcessedLedgerTransaction> ProcessedLedgerTransactions => Set<ProcessedLedgerTransaction>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

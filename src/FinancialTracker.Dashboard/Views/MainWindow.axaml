@@ -1,0 +1,306 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:FinancialTracker.Dashboard.ViewModels"
+        xmlns:local="using:FinancialTracker.Dashboard"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="820"
+        x:Class="FinancialTracker.Dashboard.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="Financial Tracker — Dashboard"
+        Width="1280" Height="820"
+        MinWidth="900" MinHeight="600">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <DockPanel>
+        <!-- HEADER -->
+        <Border DockPanel.Dock="Top" Background="#1a1a2e" Padding="20,14">
+            <StackPanel Orientation="Horizontal" Spacing="12">
+                <TextBlock Text="Financial Tracker" FontSize="22" FontWeight="Bold" Foreground="#e94560"/>
+                <TextBlock Text="Dashboard" FontSize="22" FontWeight="Light" Foreground="#cccccc" />
+            </StackPanel>
+        </Border>
+
+        <!-- DOCKER NOT RUNNING BANNER -->
+        <Border DockPanel.Dock="Top" Background="#c0392b" Padding="14,10"
+                IsVisible="{Binding !IsDockerRunning}">
+            <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Center">
+                <TextBlock Text="Docker Desktop is not running." FontWeight="Bold"
+                           Foreground="White" VerticalAlignment="Center"/>
+                <TextBlock Text="Start it manually, then click Check Status. The app will auto-detect when it comes online."
+                           Foreground="#ffcccc" VerticalAlignment="Center"/>
+                <Button Content="Check Now" Command="{Binding CheckDockerStatusCommand}"
+                        Padding="14,4" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+
+        <!-- MAIN TABS -->
+        <TabControl Margin="8" Padding="0,8">
+
+            <!-- ============================================ -->
+            <!--  TAB 1: INFRASTRUCTURE                       -->
+            <!-- ============================================ -->
+            <TabItem Header="Infrastructure" FontSize="14">
+                <ScrollViewer Padding="16">
+                    <StackPanel Spacing="20" MaxWidth="800">
+
+                        <!-- Docker Desktop -->
+                        <Border BorderBrush="#444" BorderThickness="1" CornerRadius="8" Padding="20">
+                            <StackPanel Spacing="12">
+                                <TextBlock Text="Docker Desktop" FontSize="16" FontWeight="SemiBold" Foreground="#e94560"/>
+                                <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+                                    <TextBlock Text="Status:" VerticalAlignment="Center" Width="120"/>
+                                    <TextBlock Text="{Binding DockerStatus}" FontWeight="Bold" VerticalAlignment="Center" Width="260"/>
+                                    <Button Content="Check Status" Command="{Binding CheckDockerStatusCommand}" Width="130"/>
+                                </StackPanel>
+                                <TextBlock Text="Start Docker Desktop manually before using the dashboard."
+                                           Foreground="#999" FontSize="12" FontStyle="Italic"
+                                           IsVisible="{Binding !IsDockerRunning}"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Docker Compose / Kafka -->
+                        <Border BorderBrush="#333" BorderThickness="1" CornerRadius="8" Padding="20"
+                                IsEnabled="{Binding IsDockerRunning}" Opacity="{Binding IsDockerRunning, Converter={x:Static local:BoolToOpacityConverter.Instance}}">
+                            <StackPanel Spacing="12">
+                                <TextBlock Text="Docker Compose" FontSize="16" FontWeight="SemiBold"/>
+                                <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+                                    <TextBlock Text="Kafka:" VerticalAlignment="Center" Width="120"/>
+                                    <TextBlock Text="{Binding KafkaStatus}" FontWeight="Bold" VerticalAlignment="Center" Width="200"/>
+                                    <Button Content="Start Kafka" Command="{Binding StartKafkaCommand}" Width="130"/>
+                                    <Button Content="Stop Kafka" Command="{Binding StopKafkaCommand}" Width="130"/>
+                                    <Button Content="Open Kafka UI" Command="{Binding OpenKafkaUiCommand}" Width="130"
+                                            FontStyle="Italic"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Microservices -->
+                        <Border BorderBrush="#333" BorderThickness="1" CornerRadius="8" Padding="20"
+                                IsEnabled="{Binding IsDockerRunning}" Opacity="{Binding IsDockerRunning, Converter={x:Static local:BoolToOpacityConverter.Instance}}">
+                            <StackPanel Spacing="12">
+                                <StackPanel Orientation="Horizontal" Spacing="12">
+                                    <TextBlock Text="Microservices" FontSize="16" FontWeight="SemiBold"/>
+                                    <Button Content="Refresh Health" Command="{Binding RefreshHealthCommand}"
+                                            FontSize="11" Padding="10,4" VerticalAlignment="Center"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Spacing="12">
+                                    <TextBlock Text="Auth (5001):" VerticalAlignment="Center" Width="150"/>
+                                    <TextBlock Text="{Binding AuthServiceStatus}" FontWeight="Bold" VerticalAlignment="Center" Width="80"/>
+                                    <TextBlock Text="{Binding AuthHealth}" Foreground="#27ae60" VerticalAlignment="Center" Width="80"/>
+                                    <Button Content="Start" Command="{Binding StartAuthCommand}" Width="80"/>
+                                    <Button Content="Stop" Command="{Binding StopAuthCommand}" Width="80"/>
+                                    <Button Content="Swagger" Command="{Binding OpenAuthSwaggerCommand}" Width="80"
+                                            FontStyle="Italic"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Spacing="12">
+                                    <TextBlock Text="Accounts (5002):" VerticalAlignment="Center" Width="150"/>
+                                    <TextBlock Text="{Binding AccountsServiceStatus}" FontWeight="Bold" VerticalAlignment="Center" Width="80"/>
+                                    <TextBlock Text="{Binding AccountsHealth}" Foreground="#27ae60" VerticalAlignment="Center" Width="80"/>
+                                    <Button Content="Start" Command="{Binding StartAccountsCommand}" Width="80"/>
+                                    <Button Content="Stop" Command="{Binding StopAccountsCommand}" Width="80"/>
+                                    <Button Content="Swagger" Command="{Binding OpenAccountsSwaggerCommand}" Width="80"
+                                            FontStyle="Italic"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Spacing="12">
+                                    <TextBlock Text="Transactions (5003):" VerticalAlignment="Center" Width="150"/>
+                                    <TextBlock Text="{Binding TransactionsServiceStatus}" FontWeight="Bold" VerticalAlignment="Center" Width="80"/>
+                                    <TextBlock Text="{Binding TransactionsHealth}" Foreground="#27ae60" VerticalAlignment="Center" Width="80"/>
+                                    <Button Content="Start" Command="{Binding StartTransactionsCommand}" Width="80"/>
+                                    <Button Content="Stop" Command="{Binding StopTransactionsCommand}" Width="80"/>
+                                    <Button Content="Swagger" Command="{Binding OpenTransactionsSwaggerCommand}" Width="80"
+                                            FontStyle="Italic"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- Bulk actions -->
+                        <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Center"
+                                    IsEnabled="{Binding IsDockerRunning}" Opacity="{Binding IsDockerRunning, Converter={x:Static local:BoolToOpacityConverter.Instance}}">
+                            <Button Content="Start All" Command="{Binding StartAllCommand}"
+                                    FontSize="14" FontWeight="SemiBold" Padding="28,10"
+                                    Background="#27ae60" Foreground="White"/>
+                            <Button Content="Stop All" Command="{Binding StopAllCommand}"
+                                    FontSize="14" FontWeight="SemiBold" Padding="28,10"
+                                    Background="#c0392b" Foreground="White"/>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <!-- ============================================ -->
+            <!--  TAB 2: API DEMO                             -->
+            <!-- ============================================ -->
+            <TabItem Header="API Demo" FontSize="14"
+                     IsEnabled="{Binding IsDockerRunning}">
+                <ScrollViewer Padding="16">
+                    <StackPanel Spacing="20" MaxWidth="900">
+
+                        <!-- AUTH -->
+                        <Border BorderBrush="#333" BorderThickness="1" CornerRadius="8" Padding="20">
+                            <StackPanel Spacing="10">
+                                <TextBlock Text="Auth Service" FontSize="16" FontWeight="SemiBold" Foreground="#e94560"/>
+
+                                <TextBlock Text="Register" FontWeight="SemiBold" Margin="0,6,0,0"/>
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBox PlaceholderText="Email" Text="{Binding RegEmail}" Width="200"/>
+                                    <TextBox PlaceholderText="Password" Text="{Binding RegPassword}" Width="160" PasswordChar="*"/>
+                                    <TextBox PlaceholderText="Name" Text="{Binding RegName}" Width="160"/>
+                                    <Button Content="Register" Command="{Binding RegisterCommand}" Width="100"/>
+                                </StackPanel>
+
+                                <TextBlock Text="Login" FontWeight="SemiBold" Margin="0,6,0,0"/>
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBox PlaceholderText="Email" Text="{Binding LoginEmail}" Width="200"/>
+                                    <TextBox PlaceholderText="Password" Text="{Binding LoginPassword}" Width="160" PasswordChar="*"/>
+                                    <Button Content="Login" Command="{Binding LoginCommand}" Width="100"/>
+                                </StackPanel>
+
+                                <TextBlock Text="Bearer token (Login fills this, or paste then Apply)" FontWeight="SemiBold" Margin="0,6,0,0"/>
+                                <StackPanel Spacing="8">
+                                    <TextBox Text="{Binding JwtToken}" FontFamily="Consolas"
+                                             FontSize="11" MinHeight="44" TextWrapping="Wrap" AcceptsReturn="False"
+                                             HorizontalAlignment="Stretch"
+                                             PlaceholderText="JWT"/>
+                                    <Button Content="Apply token" Command="{Binding ApplyJwtTokenCommand}"
+                                            HorizontalAlignment="Left" MinWidth="120"/>
+                                </StackPanel>
+
+                                <TextBlock Text="Response" FontWeight="SemiBold" Margin="0,6,0,0"/>
+                                <TextBox Text="{Binding AuthOutput}" IsReadOnly="True" FontFamily="Consolas"
+                                         FontSize="12" Height="100" TextWrapping="Wrap"
+                                         AcceptsReturn="True"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- ACCOUNTS -->
+                        <Border BorderBrush="#333" BorderThickness="1" CornerRadius="8" Padding="20">
+                            <StackPanel Spacing="10">
+                                <TextBlock Text="Accounts Service" FontSize="16" FontWeight="SemiBold" Foreground="#3498db"/>
+
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBox PlaceholderText="Account Name" Text="{Binding AccName}" Width="200"/>
+                                    <TextBox PlaceholderText="Currency" Text="{Binding AccCurrency}" Width="80"/>
+                                    <Button Content="Create Account" Command="{Binding CreateAccountCommand}" Width="140"/>
+                                    <Button Content="List Accounts" Command="{Binding ListAccountsCommand}" Width="140"/>
+                                    <Button Content="Get Balance" Command="{Binding GetBalanceCommand}" Width="120"/>
+                                </StackPanel>
+
+                                <TextBlock Text="Response" FontWeight="SemiBold" Margin="0,6,0,0"/>
+                                <TextBox Text="{Binding AccountsOutput}" IsReadOnly="True" FontFamily="Consolas"
+                                         FontSize="12" Height="140" TextWrapping="Wrap"
+                                         AcceptsReturn="True"/>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- TRANSACTIONS -->
+                        <Border BorderBrush="#333" BorderThickness="1" CornerRadius="8" Padding="20">
+                            <StackPanel Spacing="10">
+                                <TextBlock Text="Transactions Service" FontSize="16" FontWeight="SemiBold" Foreground="#2ecc71"/>
+
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBox PlaceholderText="Account ID" Text="{Binding TxAccountId}" Width="310"/>
+                                    <TextBox PlaceholderText="Amount" Text="{Binding TxAmount}" Width="100"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                    <TextBox PlaceholderText="Category" Text="{Binding TxCategory}" Width="200"/>
+                                    <TextBox PlaceholderText="Note" Text="{Binding TxNote}" Width="200"/>
+                                    <Button Content="Add Income" Command="{Binding AddIncomeCommand}" Width="120"
+                                            Background="#27ae60" Foreground="White"/>
+                                    <Button Content="Add Expense" Command="{Binding AddExpenseCommand}" Width="120"
+                                            Background="#e67e22" Foreground="White"/>
+                                </StackPanel>
+
+                                <TextBlock Text="Response" FontWeight="SemiBold" Margin="0,6,0,0"/>
+                                <TextBox Text="{Binding TxOutput}" IsReadOnly="True" FontFamily="Consolas"
+                                         FontSize="12" Height="120" TextWrapping="Wrap"
+                                         AcceptsReturn="True"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <!-- ============================================ -->
+            <!--  TAB 3: RELIABILITY TEST (Outbox Pattern)    -->
+            <!-- ============================================ -->
+            <TabItem Header="Reliability Test" FontSize="14"
+                     IsEnabled="{Binding IsDockerRunning}">
+                <DockPanel Margin="16">
+                    <StackPanel DockPanel.Dock="Top" Spacing="14" MaxWidth="900" HorizontalAlignment="Left">
+                        <TextBlock Text="Transactional Outbox — Reliability Demonstration"
+                                   FontSize="16" FontWeight="SemiBold" Foreground="#f39c12"/>
+                        <TextBlock TextWrapping="Wrap" Foreground="#aaa" FontSize="13"
+                                   Text="This test proves events survive a broker outage. Stop Kafka, create a transaction (event is saved to OutboxMessages in the same DB transaction), then restart Kafka and watch the relay deliver the event to the Accounts consumer."/>
+
+                        <Border BorderBrush="#333" BorderThickness="1" CornerRadius="8" Padding="16">
+                            <StackPanel Spacing="10">
+                                <StackPanel Orientation="Horizontal" Spacing="12">
+                                    <Button Content="1. Stop Kafka" Command="{Binding RtStopKafkaCommand}"
+                                            Width="160" Background="#c0392b" Foreground="White"/>
+                                    <Button Content="2. Create Transaction" Command="{Binding RtCreateTransactionCommand}"
+                                            Width="180" Background="#2980b9" Foreground="White"/>
+                                    <Button Content="3. Start Kafka" Command="{Binding RtStartKafkaCommand}"
+                                            Width="160" Background="#27ae60" Foreground="White"/>
+                                    <Button Content="4. Check Balance" Command="{Binding RtCheckBalanceCommand}"
+                                            Width="160" Background="#8e44ad" Foreground="White"/>
+                                </StackPanel>
+                                <Button Content="Clear Log" Command="{Binding RtClearCommand}" Width="100"
+                                        HorizontalAlignment="Left"/>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+
+                    <TextBox Text="{Binding ReliabilityLog}" IsReadOnly="True"
+                             FontFamily="Consolas" FontSize="13"
+                             AcceptsReturn="True" TextWrapping="Wrap"
+                             Margin="0,12,0,0" Name="ReliabilityLogBox"/>
+                </DockPanel>
+            </TabItem>
+
+            <!-- ============================================ -->
+            <!--  TAB 4: SERVICE LOGS                         -->
+            <!-- ============================================ -->
+            <TabItem Header="Logs" FontSize="14">
+                <TabControl Margin="8">
+                    <TabItem Header="Infrastructure / Docker">
+                        <DockPanel>
+                            <Button DockPanel.Dock="Top" Content="Clear"
+                                    Command="{Binding ClearInfraLogCommand}"
+                                    HorizontalAlignment="Left" Margin="4" Padding="12,4"/>
+                            <TextBox Text="{Binding InfraLog}" IsReadOnly="True"
+                                     FontFamily="Consolas" FontSize="12"
+                                     AcceptsReturn="True" TextWrapping="NoWrap"
+                                     Name="InfraLogBox"/>
+                        </DockPanel>
+                    </TabItem>
+                    <TabItem Header="Auth (5001)">
+                        <TextBox Text="{Binding AuthLog}" IsReadOnly="True"
+                                 FontFamily="Consolas" FontSize="12"
+                                 AcceptsReturn="True" TextWrapping="NoWrap"
+                                 Name="AuthLogBox"/>
+                    </TabItem>
+                    <TabItem Header="Accounts (5002)">
+                        <TextBox Text="{Binding AccountsLog}" IsReadOnly="True"
+                                 FontFamily="Consolas" FontSize="12"
+                                 AcceptsReturn="True" TextWrapping="NoWrap"
+                                 Name="AccountsLogBox"/>
+                    </TabItem>
+                    <TabItem Header="Transactions (5003)">
+                        <TextBox Text="{Binding TransactionsLog}" IsReadOnly="True"
+                                 FontFamily="Consolas" FontSize="12"
+                                 AcceptsReturn="True" TextWrapping="NoWrap"
+                                 Name="TransactionsLogBox"/>
+                    </TabItem>
+                </TabControl>
+            </TabItem>
+
+        </TabControl>
+    </DockPanel>
+</Window>

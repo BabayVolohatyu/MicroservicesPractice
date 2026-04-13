@@ -56,7 +56,7 @@ public sealed class AuthApplicationService
         return new LoginResponse
         {
             Name = user.Name,
-            Token = "Bearer " + token
+            Token = token
         };
     }
 }
